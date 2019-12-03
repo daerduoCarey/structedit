@@ -5,7 +5,8 @@ This folder includes the StructEdit experiments for AE edit reconstruction, VAE 
 To train the models, please first go to `data/partnetdata/` folder and download the training data. 
 To test over the pretrained models, please go to `data/models/` folder and download the pretrained checkpoints.
 To download the pre-generated results, please go to `data/results/` folder and download the data.
-All the resources to download share the same [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSc9g2XEGMY-etdlCcy4p6ZQ4nNStaERV-ivehGYzn-FLhvBpg/viewform?usp=sf_link).
+
+Please fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLSc9g2XEGMY-etdlCcy4p6ZQ4nNStaERV-ivehGYzn-FLhvBpg/viewform?usp=sf_link) to download all the resources.
 
 ## Dependencies
 This code has been tested on Ubuntu 16.04 with Cuda 9.0, GCC 5.4.0, Python 3.6.5, PyTorch 1.1.0, Jupyter IPython Notebook 5.7.8. 
