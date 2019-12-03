@@ -45,6 +45,8 @@ This repository provides data and code as follows.
     stats/                  # contains helper statistics
 ```
 
+The code is developed with Python 3.6, PyTorch 1.1.0, and CUDA 9.0.
+
 ## Questions
 
 Please post issues for questions and more helps on this Github repo page. We encourage using Github issues instead of sending us emails since your questions may benefit others.

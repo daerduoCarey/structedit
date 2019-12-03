@@ -1,0 +1,34 @@
+chair_cd    
+mean_cd     0.059126748
+mean_sd_q    0.595233563
+mean_sd_c    0.562835925
+    
+chair_sd    
+mean_cd     0.089710251
+mean_sd_q    0.17837824
+mean_sd_c    0.197524605
+    
+table_cd    
+mean_cd     0.05844458
+mean_sd_q    0.70604144
+mean_sd_c    0.663656587
+    
+table_sd    
+mean_cd     0.120320469
+mean_sd_q    0.145497412
+mean_sd_c    0.195163431
+    
+furniture_cd    
+mean_cd     0.069302187
+mean_sd_q    1.125737209
+mean_sd_c    1.070331528
+    
+furniture_sd    
+mean_cd     0.122961629
+mean_sd_q    0.469273495
+mean_sd_c    0.52768064
+
+synshapes
+mean_cd     0.07022474770676732        
+mean_sd_q   0.5626725819586025        
+mean_sd_c   0.5267717281351981
