@@ -1,0 +1,1 @@
+Please fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLSc9g2XEGMY-etdlCcy4p6ZQ4nNStaERV-ivehGYzn-FLhvBpg/viewform?usp=sf_link) to download all related data: pre-computed neighborhood meta-data, the SynShapes dataset, pre-trained models and pre-generates results.
