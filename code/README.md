@@ -35,8 +35,6 @@ To test the model, run
 
     bash scripts/eval_recon_ae_chair_cd.sh
 
-You can use `vis_recon.ipynb` to visualize the AE edit reconstruction results.
-
 Notice that the evaluation code, by default, requires the baseline method of StructureNet result directory to output the quantitative comparison.
 Put the pre-generated results under `../data/results` folder.
 
@@ -55,7 +53,7 @@ The evaluation code may overwrite the downloaded pre-generated results.
 You can use `vis_recon.ipynb` to visualize the results in Python Jupyter Notebook.
 
 ## Run for Table/StorageFurniture, or Structure-distance Neighborhood
-Simple replace the `Chair` to `Table` or `StorageFurniture` in the training or evaluation scripts, and replace `cd` with `sd` for using structure distance neighborhood.
+Simply replace the `Chair` to `Table` or `StorageFurniture` in the training or evaluation scripts, and replace `cd` with `sd` for using structure distance neighborhood.
 
 ## Normalization Factors to Obtain Table Numbers in Paper
 To obtain the numbers shown in paper, please divide the reconstruction errors by the normalization factors defined in `../stats/norm_params.txt`.
