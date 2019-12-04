@@ -1,8 +1,4 @@
-Please fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLSecwZKRr8is2lTLy8idmrwSMTAB0w65QpSH5BGhLD_v2p5mIw/viewform?usp=sf_link) to download the StructureNet data.
-This zip file provides the processed PartNet hierarchy of graphs data for six object categories used in the paper: bed, chair, storage furniture, table, trashcan, vase.
-In the StructEdit project, we only use three categories: chair, storage furniture, table.
-
-Please fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLSc9g2XEGMY-etdlCcy4p6ZQ4nNStaERV-ivehGYzn-FLhvBpg/viewform?usp=sf_link) to download the pre-computed PartNet/StructureNet data shape difference neighborhood meta information.
+Please fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLSc9g2XEGMY-etdlCcy4p6ZQ4nNStaERV-ivehGYzn-FLhvBpg/viewform?usp=sf_link) to download the pre-computed PartNet/StructureNet data and the shape difference neighborhood meta-information.
 
 ## About this repository
 

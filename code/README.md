@@ -25,11 +25,9 @@ Then, install https://github.com/rusty1s/pytorch_scatter by running
 You can visualize the computed shape neighbors using `vis_neighbors.ipynb`.
 
 ## AE Edit Reconstruction
-To train the network from scratch, for example, run
+To train the network from scratch, run
 
     bash scripts/train_ae_chair_cd.sh
-
-to train a model on chair box-shapes using chamfer-distance neighborhoods.
 
 To test the model, run
 
@@ -52,6 +50,26 @@ The evaluation code may overwrite the downloaded pre-generated results.
 
 You can use `vis_recon.ipynb` to visualize the results in Python Jupyter Notebook.
 
+## VAE Edit Generation/Transfer
+To train the network from scratch, run
+
+    bash scripts/train_vae_chair_cd.sh
+
+To test the model, run
+
+    bash scripts/eval_editgen_vae_chair_cd.sh
+
+To train the StructureNet baseline from scratch, run
+
+    bash scripts/train_structurenet_vae_chair.sh
+
+To test the pre-trained model, run
+
+    bash scripts/eval_editgen_structurenet_vae_chair.sh [sigma_value]
+
+You can use `vis_editgen.ipynb` to visualize the results in Python Jupyter Notebook.
+
+
 ## Run for Table/StorageFurniture, or Structure-distance Neighborhood
 Simply replace the `Chair` to `Table` or `StorageFurniture` in the training or evaluation scripts, and replace `cd` with `sd` for using structure distance neighborhood.
 
@@ -63,3 +81,4 @@ These numbers are just used to make the quantitative numbers have reasonable and
 They are not affecting the results at all.
 
 We use the shared normalization factors when measuring chamfer distances, while use separate ones when measuring structure distances regarding quality and converage scores.
+
