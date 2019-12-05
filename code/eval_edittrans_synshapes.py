@@ -1,3 +1,8 @@
+"""
+    This script tests Edit Transfer performance of our proposed StructEdit over the SynShapes synthetic dataset
+    with quantitative evaluations
+"""
+
 import os
 import sys
 import shutil

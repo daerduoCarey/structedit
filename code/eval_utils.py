@@ -1,3 +1,7 @@
+"""
+    This file contains helper functions for quantitative evaluations reported in the paper
+"""
+
 import os
 import sys
 import numpy as np

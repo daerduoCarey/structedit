@@ -1,3 +1,8 @@
+"""
+    This script tests Edit Transfer performance of the StructureNet baseline over the SynShapes synthetic dataset
+    with quantitative evaluations
+"""
+
 import os
 import sys
 import shutil

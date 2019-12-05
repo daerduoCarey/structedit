@@ -1,3 +1,7 @@
+"""
+    This script tests the shape difference/deltas/edits edit transfer (call from vis_edittrans.ipynb)
+"""
+
 import os
 import sys
 import shutil
