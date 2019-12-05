@@ -48,7 +48,7 @@ print(f'Using device: {conf.device}')
 # check if eval results already exist. If so, delete it.
 result_dir = os.path.join(conf.result_path, conf.exp_name + '_editgen')
 if os.path.exists(result_dir):
-     response = input('Eval results directory "%s" already exists, overwrite? (y/n) ' % result_dir)
+     response = input('eval results directory "%s" already exists, overwrite? (y/n) ' % result_dir)
      if response != 'y':
          sys.exit()
      shutil.rmtree(result_dir)

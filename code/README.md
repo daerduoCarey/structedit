@@ -23,6 +23,8 @@ Then, install https://github.com/rusty1s/pytorch_scatter by running
     pip3 install torch-scatter
 
 ## Compute and Visualize the Shape Neighborhoods
+Use `compute_neighborhood_cd.py` and `compute_neighborhood_sd.py` to compute the chamfer-distance and structure-distance ground-truth PartNet shape neighbors.
+
 You can visualize the computed shape neighbors using `vis_neighbors.ipynb`.
 
 ## PartNet AE Edit Reconstruction
@@ -79,20 +81,24 @@ You can use `vis_edittrans.ipynb` to run and visualize the results in Python Jup
 
 ## SynShapes VAE Edit Transfer
 To train the network from scratch, run
+
     bash scripts/train_vae_synshapes.sh
 
 To test the model, run
+
     bash scripts/eval_edittrans_vae_synshapes.sh [data_path1] [data_path2]
 
-where [data\_path1] and [data\_path2] are two of the three options: `../data/synshapesdata/syn_chair`, `../data/synshapesdata/syn_sofa`, and `../data/synshapesdata/syn_stool`.
+where [data\_path1] and [data\_path2] are any two of the three options: `../data/synshapesdata/syn_chair`, `../data/synshapesdata/syn_sofa`, and `../data/synshapesdata/syn_stool`.
 
 To train the StructureNet baseline from scratch, run
+
     bash scripts/train_structurenet_vae_synshapes.sh
 
 To test the pre-trained model, run
+
     bash scripts/eval_edittrans_structurenet_vae_synshapes.sh [data_path1] [data_path2]
 
-where [data\_path1] and [data\_path2] are two of the three options: `../data/synshapesdata/syn_chair`, `../data/synshapesdata/syn_sofa`, and `../data/synshapesdata/syn_stool`.
+where [data\_path1] and [data\_path2] are any two of the three options: `../data/synshapesdata/syn_chair`, `../data/synshapesdata/syn_sofa`, and `../data/synshapesdata/syn_stool`.
 
 You can use `vis_edittrans_synshapes.ipynb` to visualize the results in Python Jupyter Notebook.
 
