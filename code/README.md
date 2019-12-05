@@ -3,6 +3,7 @@ This folder includes the StructEdit experiments for AE edit reconstruction, VAE 
 
 ## Before start
 To train the models, please first go to `data/partnetdata/` folder and download the training data. 
+To conduct experiments using SynShapes synthetic dataset, please first go to `data/synshapesdata/` folder and download the training data. 
 To test over the pretrained models, please go to `data/models/` folder and download the pretrained checkpoints.
 To download the pre-generated results, please go to `data/results/` folder and download the data.
 
@@ -66,6 +67,8 @@ To train the StructureNet baseline from scratch, run
 To test the pre-trained model, run
 
     bash scripts/eval_editgen_structurenet_vae_chair.sh [sigma_value]
+
+where the [sigma\_value] indicates the radius of uniform Gaussian that shape deltas are sampled from.
 
 You can use `vis_editgen.ipynb` to visualize the results in Python Jupyter Notebook.
 

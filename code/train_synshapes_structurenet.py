@@ -13,7 +13,7 @@ import numpy as np
 import torch
 import torch.utils.data
 from config import add_train_vae_args
-from data import PartNetDataset, Tree
+from data import SynShapesDataset, Tree
 import utils
 
 # Use 1-4 CPU threads to train.
@@ -83,10 +83,8 @@ def train(conf):
 
     # create training and validation datasets and data loaders
     data_features = ['object']
-    train_dataset = PartNetDataset(conf.data_path, conf.train_dataset, data_features, \
-            load_geo=conf.load_geo)
-    valdt_dataset = PartNetDataset(conf.data_path, conf.val_dataset, data_features, \
-            load_geo=conf.load_geo)
+    train_dataset = SynShapesDataset(conf.train_dataset, data_features)
+    valdt_dataset = SynShapesDataset(conf.val_dataset, data_features)
     train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=conf.batch_size, \
             shuffle=True, collate_fn=utils.collate_feats)
     valdt_dataloader = torch.utils.data.DataLoader(valdt_dataset, batch_size=conf.batch_size, \

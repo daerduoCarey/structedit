@@ -22,8 +22,9 @@ parser.add_argument('--data_path2', type=str)
 eval_conf = parser.parse_args()
 
 # load train config
-conf = torch.load(os.path.join(eval_conf.model_path, eval_conf.exp_name, 'conf.pth'))
+conf = torch.load(os.path.join(eval_conf.ckpt_path, eval_conf.exp_name, 'conf.pth'))
 eval_conf.data_path = conf.data_path
+eval_conf.category = conf.category
 
 # load object category information
 if conf.category is not None:
@@ -65,7 +66,7 @@ model_names = ['encoder', 'decoder']
 # load pretrained model
 _ = utils.load_checkpoint(
     models=models, model_names=model_names,
-    dirname=os.path.join(conf.model_path, conf.exp_name),
+    dirname=os.path.join(conf.ckpt_path, conf.exp_name),
     epoch=conf.model_epoch,
     strict=True)
 

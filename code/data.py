@@ -730,64 +730,34 @@ class PartNetShapeDiffDataset(data.Dataset):
         return idx[:topk]
 
 
-# extend torch.data.Dataset class for SynChair ShapeDiff
-class SynChairShapeDiffDataset(data.Dataset):
+# extend torch.data.Dataset class for SynShapes Dataset
+class SynShapesDataset(data.Dataset):
 
-    def __init__(self, data_dir, object_list, data_features, topk):
-        print('SynChairShapeDiffDataset: ', topk, data_dir)
-        self.data_dir = data_dir
+    def __init__(self, object_list, data_features):
+        self.data_dirs = ['../data/synshapesdata/syn_chair',
+                '../data/synshapesdata/syn_sofa', 
+                '../data/synshapesdata/syn_stool']
+        print('SynShapesDataset: ', self.data_dirs)
         self.data_features = data_features
-        self.topk = topk
 
         if isinstance(object_list, str):
-            with open(os.path.join(self.data_dir, object_list), 'r') as f:
+            with open(os.path.join(self.data_dirs[0], object_list), 'r') as f:
                 self.object_names = [item.rstrip() for item in f.readlines()]
         else:
             self.object_names = object_list
 
-        self.neighbors = []
-        bar = ProgressBar()
-        for name in bar(self.object_names):
-            self.neighbors.append(self.load_neighbors(name))
-
     def __getitem__(self, index):
-        if 'object' in self.data_features or 'diff' in self.data_features:
-            obj = PartNetDataset.load_object(os.path.join(self.data_dir, self.object_names[index]+'.json'))
+        cur_data_dir = self.data_dirs[np.random.randint(len(self.data_dirs))]
 
-        if 'diff' in self.data_features or 'name2' in self.data_features or 'object2' in self.data_features:
-            name2 = self.neighbors[index][np.random.randint(self.topk)]
-            obj2 = PartNetDataset.load_object(os.path.join(self.data_dir, name2+'.json'))
-            diff = Tree.compute_shape_diff(obj.root, obj2.root)
-
-        if 'neighbor_diffs' in self.data_features or 'neighbor_objs' in self.data_features:
-            neighbor_diffs = []; neighbor_objs = []; neighbor_names = [];
-            for neighbor_name in self.neighbors[index]:
-                neighbor_obj = PartNetDataset.load_object(os.path.join(self.data_dir, neighbor_name+'.json'))
-                neighbor_objs.append(neighbor_obj)
-                neighbor_diffs.append(Tree.compute_shape_diff(obj.root, neighbor_obj.root))
-                neighbor_names.append(neighbor_name)
-
-        if 'neighbor_names_only' in self.data_features:
-            neighbor_names = self.neighbors[index];
+        if 'object' in self.data_features:
+            obj = PartNetDataset.load_object(os.path.join(cur_data_dir, self.object_names[index]+'.json'))
 
         data_feats = ()
         for feat in self.data_features:
             if feat == 'object':
                 data_feats = data_feats + (obj,)
-            elif feat == 'object2':
-                data_feats = data_feats + (obj2,)
-            elif feat == 'diff':
-                data_feats = data_feats + (diff,)
             elif feat == 'name':
                 data_feats = data_feats + (self.object_names[index],)
-            elif feat == 'name2':
-                data_feats = data_feats + (name2,)
-            elif feat == 'neighbor_objs':
-                data_feats = data_feats + (neighbor_objs,)
-            elif feat == 'neighbor_diffs':
-                data_feats = data_feats + (neighbor_diffs,)
-            elif feat == 'neighbor_names' or feat == 'neighbor_names_only':
-                data_feats = data_feats + (neighbor_names,)
             else:
                 assert False, 'ERROR: unknow feat type %s!' % feat
 
@@ -795,12 +765,6 @@ class SynChairShapeDiffDataset(data.Dataset):
 
     def __len__(self):
         return len(self.object_names)
-
-    @staticmethod
-    def load_neighbors(name):
-        idx = int(name) // 96
-        neighbors = ['%05d'%i for i in range(idx*96, (idx+1)*96)]
-        return neighbors
 
 
 # extend torch.data.Dataset class for SynShapes ShapeDiff
