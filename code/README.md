@@ -79,20 +79,20 @@ You can use `vis_edittrans.ipynb` to run and visualize the results in Python Jup
 
 ## SynShapes VAE Edit Transfer
 To train the network from scratch, run
-
     bash scripts/train_vae_synshapes.sh
 
 To test the model, run
+    bash scripts/eval_edittrans_vae_synshapes.sh [data_path1] [data_path2]
 
-    bash scripts/eval_edittrans_vae_synshapes.sh
+where [data\_path1] and [data\_path2] are two of the three options: `../data/synshapesdata/syn_chair`, `../data/synshapesdata/syn_sofa`, and `../data/synshapesdata/syn_stool`.
 
 To train the StructureNet baseline from scratch, run
-
     bash scripts/train_structurenet_vae_synshapes.sh
 
 To test the pre-trained model, run
+    bash scripts/eval_edittrans_structurenet_vae_synshapes.sh [data_path1] [data_path2]
 
-    bash scripts/eval_edittrans_structurenet_vae_synshapes.sh
+where [data\_path1] and [data\_path2] are two of the three options: `../data/synshapesdata/syn_chair`, `../data/synshapesdata/syn_sofa`, and `../data/synshapesdata/syn_stool`.
 
 You can use `vis_edittrans_synshapes.ipynb` to visualize the results in Python Jupyter Notebook.
 
