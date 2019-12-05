@@ -43,9 +43,11 @@ This repository provides data and code as follows.
     code/                   # contains code and scripts
          # please follow `code/README.md` to run the code
     stats/                  # contains helper statistics
+    gen_synshapes/          # contains code to generate SynShapes dataset
+         # please follow `gen_synshapes/README.md` to run the code
 ```
 
-The code is developed with Python 3.6, PyTorch 1.1.0, and CUDA 9.0.
+This code has been tested on Ubuntu 16.04 with Cuda 9.0, GCC 5.4.0, Python 3.6.5, PyTorch 1.1.0, Jupyter IPython Notebook 5.7.8. 
 
 ## Questions
 
@@ -53,7 +55,7 @@ Please post issues for questions and more helps on this Github repo page. We enc
 
 ## License
 
-MIT Licence
+MIT License
 
 ## Updates
 
