@@ -808,9 +808,9 @@ class SynShapesDiffDataset(data.Dataset):
 
     def __init__(self, object_list, data_features, topk):
         print('SynShapesDiffDataset: ', topk)
-        self.data_dirs = ['../../data/syn_chair_structedit',
-                '../../data/syn_sofa_structedit', 
-                '../../data/syn_stool_structedit']
+        self.data_dirs = ['../data/synshapesdata/syn_chair',
+                '../data/synshapesdata/syn_sofa', 
+                '../data/synshapesdata/syn_stool']
         print(self.data_dirs)
         self.data_features = data_features
         self.topk = topk

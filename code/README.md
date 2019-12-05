@@ -24,7 +24,7 @@ Then, install https://github.com/rusty1s/pytorch_scatter by running
 ## Compute and Visualize the Shape Neighborhoods
 You can visualize the computed shape neighbors using `vis_neighbors.ipynb`.
 
-## AE Edit Reconstruction
+## PartNet AE Edit Reconstruction
 To train the network from scratch, run
 
     bash scripts/train_ae_chair_cd.sh
@@ -50,7 +50,7 @@ The evaluation code may overwrite the downloaded pre-generated results.
 
 You can use `vis_recon.ipynb` to visualize the results in Python Jupyter Notebook.
 
-## VAE Edit Generation/Transfer
+## PartNet VAE Edit Generation
 To train the network from scratch, run
 
     bash scripts/train_vae_chair_cd.sh
@@ -69,6 +69,29 @@ To test the pre-trained model, run
 
 You can use `vis_editgen.ipynb` to visualize the results in Python Jupyter Notebook.
 
+## PartNet VAE Edit Transfer
+First, train the VAE model for StructEdit (see the section above).
+
+You can use `vis_edittrans.ipynb` to run and visualize the results in Python Jupyter Notebook.
+
+## SynShapes VAE Edit Transfer
+To train the network from scratch, run
+
+    bash scripts/train_vae_synshapes.sh
+
+To test the model, run
+
+    bash scripts/eval_edittrans_vae_synshapes.sh
+
+To train the StructureNet baseline from scratch, run
+
+    bash scripts/train_structurenet_vae_synshapes.sh
+
+To test the pre-trained model, run
+
+    bash scripts/eval_edittrans_structurenet_vae_synshapes.sh
+
+You can use `vis_edittrans_synshapes.ipynb` to visualize the results in Python Jupyter Notebook.
 
 ## Run for Table/StorageFurniture, or Structure-distance Neighborhood
 Simply replace the `Chair` to `Table` or `StorageFurniture` in the training or evaluation scripts, and replace `cd` with `sd` for using structure distance neighborhood.
