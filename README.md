@@ -22,6 +22,8 @@ Stanford University, University College London (UCL), University of California S
 
 Arxiv Version: https://arxiv.org/abs/1911.11098
 
+Accepted by CVPR 2020. See you at Seattle in June, 2020!
+
 Project Page: https://cs.stanford.edu/~kaichun/structedit/
 
 ## Citations
