@@ -28,11 +28,12 @@ Project Page: https://cs.stanford.edu/~kaichun/structedit/
 
 ## Citations
 
-    @article{Mo19StructEdit,
-        Author = {Mo, Kaichun and Guerrero, Paul and Yi, Li and Su, Hao and Wonka, Peter and Mitra, Niloy and Guibas, Leonidas},
-        Title = {{StructEdit}: Learning Structural Shape Variations},
-        Year = {2019},
-        Eprint = {arXiv:1911.11098},
+    @InProceedings{Mo19StructEdit,
+        author = {Mo, Kaichun and Guerrero, Paul and Yi, Li and Su, Hao and Wonka, Peter and Mitra, Niloy and Guibas, Leonidas},
+        title = {{StructEdit}: Learning Structural Shape Variations},
+        booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+        month = {June},
+        year = {2020}
     }
 
 ## About this repository
